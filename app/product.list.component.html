@@ -1,0 +1,4 @@
+<h1>Product store</h1>
+    <ul>
+        <li *ngFor="let product of products"(click)="moveTo(product.id)">{{product.id}} {{product.name}}</li>
+    </ul>
