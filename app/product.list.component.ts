@@ -1,22 +1,22 @@
-import {Component} from '@angular/core';
-
-const products = [
-    {name: "Snickers", id: 1},
-    {name: "Trousers", id: 2},
-    {name: "Jeans", id: 3},
-    {name: "Pyjama", id: 4},
-    {name: "Shirt", id: 5},
-    {name: "Trainers", id: 6}
-]
+import {Component, OnInit} from '@angular/core';
+import {ProductsService} from './products.service';
+import {Product} from './product';
 
 @Component({
     moduleId: module.id,
-    //selector: 'prod-det',
-    templateUrl: 'product.list.component.html'
+    templateUrl: 'product.list.component.html',
+    providers: [ProductsService]
 })
 
-export class ProductListComponent {
-    products = products;
+export class ProductListComponent implements OnInit {
+    products: Product[];
+    constructor(private _getProducts: ProductsService) {}
+    ngOnInit () {
+        this.getProducts();
+    }
+    getProducts() {
+        this._getProducts.getProducts().then(products => this.products = products);
+    }
     moveTo(id: number){
         console.log(id);
     };

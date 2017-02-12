@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ProductDetailsComponent2 = (function () {
-    function ProductDetailsComponent2() {
+var mock_products_1 = require('./mock-products');
+var ProductsService = (function () {
+    function ProductsService() {
     }
-    ProductDetailsComponent2 = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            template: "\n        <div class=\"jumbotron\">\n            <h2>Create product page</h2>\n        </div>\n    "
-        }), 
+    ProductsService.prototype.getProducts = function () {
+        return Promise.resolve(mock_products_1.PRODUCTS);
+    };
+    ProductsService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], ProductDetailsComponent2);
-    return ProductDetailsComponent2;
+    ], ProductsService);
+    return ProductsService;
 }());
-exports.ProductDetailsComponent2 = ProductDetailsComponent2;
-//# sourceMappingURL=product.details.component2.js.map
+exports.ProductsService = ProductsService;
+//# sourceMappingURL=products.service.js.map

@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
 var app_routing_module_1 = require('./app-routing.module');
+var app_component_1 = require('./app.component');
 var product_details_component_1 = require('./product.details.component');
 var product_details_component2_1 = require('./product.details.component2');
 var page_not_found_component_1 = require('./page.not.found.component');
@@ -22,7 +22,13 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, product_details_component_1.ProductDetailsComponent, product_details_component2_1.ProductDetailsComponent2, page_not_found_component_1.PageNotFoundComponent, product_list_component_1.ProductListComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                product_details_component_1.ProductDetailsComponent,
+                product_details_component2_1.ProductDetailsComponent2,
+                page_not_found_component_1.PageNotFoundComponent,
+                product_list_component_1.ProductListComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

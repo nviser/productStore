@@ -2,8 +2,11 @@ import {Component} from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    // selector: 'prod-det',
-    template: '<h1>Product 2 here</h1>'
+    template: `
+        <div class="jumbotron">
+            <h2>Create product page</h2>
+        </div>
+    `
 })
 
 export class ProductDetailsComponent2 {

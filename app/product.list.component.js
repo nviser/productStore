@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var products = [
-    { name: "Snickers", id: 1 },
-    { name: "Trousers", id: 2 },
-    { name: "Jeans", id: 3 },
-    { name: "Pyjama", id: 4 },
-    { name: "Shirt", id: 5 },
-    { name: "Trainers", id: 6 }
-];
+var products_service_1 = require('./products.service');
 var ProductListComponent = (function () {
-    function ProductListComponent() {
-        this.products = products;
+    function ProductListComponent(_getProducts) {
+        this._getProducts = _getProducts;
     }
+    ProductListComponent.prototype.ngOnInit = function () {
+        this.getProducts();
+    };
+    ProductListComponent.prototype.getProducts = function () {
+        var _this = this;
+        this._getProducts.getProducts().then(function (products) { return _this.products = products; });
+    };
     ProductListComponent.prototype.moveTo = function (id) {
         console.log(id);
     };
@@ -28,10 +28,10 @@ var ProductListComponent = (function () {
     ProductListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            //selector: 'prod-det',
-            templateUrl: 'product.list.component.html'
+            templateUrl: 'product.list.component.html',
+            providers: [products_service_1.ProductsService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [products_service_1.ProductsService])
     ], ProductListComponent);
     return ProductListComponent;
 }());
