@@ -12,22 +12,19 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
-var product_details_component_1 = require('./products/product.details.component');
-var product_details_component2_1 = require('./products/product.details.component2');
+// import {ProductRoutingModule} from './products/product-routing.module';
+var product_module_1 = require('./products/product.module');
 var page_not_found_component_1 = require('./page.not.found.component');
-var product_list_component_1 = require('./products/product.list.component');
+// import {ProductListComponent} from './products/product.list.component';
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
+            imports: [platform_browser_1.BrowserModule, product_module_1.ProductModule, app_routing_module_1.AppRoutingModule],
             declarations: [
                 app_component_1.AppComponent,
-                product_details_component_1.ProductDetailsComponent,
-                product_details_component2_1.ProductDetailsComponent2,
-                page_not_found_component_1.PageNotFoundComponent,
-                product_list_component_1.ProductListComponent
+                page_not_found_component_1.PageNotFoundComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

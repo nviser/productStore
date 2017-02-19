@@ -10,15 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var product_details_component_1 = require('./products/product.details.component');
-var product_details_component2_1 = require('./products/product.details.component2');
+// import {ProductDetailsComponent} from './products/product.details.component';
+// import {ProductDetailsComponent2} from './products/product.details.component2';
 var page_not_found_component_1 = require('./page.not.found.component');
-var product_list_component_1 = require('./products/product.list.component');
+// import {ProductListComponent} from './products/product.list.component';
 var appRouts = [
-    { path: '1', component: product_details_component_1.ProductDetailsComponent },
-    { path: '2', component: product_details_component2_1.ProductDetailsComponent2 },
-    { path: 'home', component: product_list_component_1.ProductListComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    /*{path: '1', component: ProductDetailsComponent},
+    {path: '2', component: ProductDetailsComponent2},
+    {path: 'home', component: ProductListComponent},*/
+    { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {

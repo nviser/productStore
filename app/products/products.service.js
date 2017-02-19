@@ -9,12 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_products_1 = require('./mock-products');
+var Product = (function () {
+    function Product(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return Product;
+}());
+exports.Product = Product;
+var PRODUCTS = [
+    new Product(1, 'Snickers'),
+    new Product(2, 'Trousers'),
+    new Product(3, 'Jeans'),
+    new Product(4, 'Pyjama'),
+    new Product(5, 'Shirt'),
+    new Product(6, 'Trainers')
+];
+// import {PRODUCTS} from './mock-products';
+// import {Product} from './product';
+var productsPromise = Promise.resolve(PRODUCTS);
 var ProductsService = (function () {
     function ProductsService() {
     }
     ProductsService.prototype.getProducts = function () {
-        return Promise.resolve(mock_products_1.PRODUCTS);
+        return productsPromise;
+    };
+    ProductsService.prototype.getProduct = function (id) {
+        return productsPromise.then(function (products) { return products.find(function (product) { return product.id === +id; }); });
     };
     ProductsService = __decorate([
         core_1.Injectable(), 

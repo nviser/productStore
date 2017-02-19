@@ -8,21 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var products_service_1 = require('./products.service');
+// import { Product } from './product';
 var ProductListComponent = (function () {
-    function ProductListComponent(_getProducts) {
-        this._getProducts = _getProducts;
+    function ProductListComponent(
+        // private _getProducts: ProductsService
+        route, router, service) {
+        this.route = route;
+        this.router = router;
+        this.service = service;
     }
     ProductListComponent.prototype.ngOnInit = function () {
-        this.getProducts();
-    };
-    ProductListComponent.prototype.getProducts = function () {
         var _this = this;
-        this._getProducts.getProducts().then(function (products) { return _this.products = products; });
+        // this.getProducts();
+        this.products = this.route.params
+            .switchMap(function (params) {
+            _this.selectedId = +params['id'];
+            return _this.service.getProducts();
+        });
     };
-    ProductListComponent.prototype.moveTo = function (id) {
-        console.log(id);
+    /*getProducts() {
+        this._getProducts.getProducts().then(products => this.products = products);
+    }*/
+    ProductListComponent.prototype.isSelected = function (product) { return product.id === this.selectedId; };
+    ProductListComponent.prototype.moveTo = function (product) {
+        console.log(product.id);
+        this.router.navigate(['/product', product.id]);
     };
     ;
     ProductListComponent = __decorate([
@@ -31,7 +45,7 @@ var ProductListComponent = (function () {
             templateUrl: 'product.list.component.html',
             providers: [products_service_1.ProductsService]
         }), 
-        __metadata('design:paramtypes', [products_service_1.ProductsService])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, products_service_1.ProductsService])
     ], ProductListComponent);
     return ProductListComponent;
 }());
