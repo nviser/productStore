@@ -35,7 +35,7 @@ var ProductListComponent = (function () {
     }*/
     ProductListComponent.prototype.isSelected = function (product) { return product.id === this.selectedId; };
     ProductListComponent.prototype.moveTo = function (product) {
-        console.log(product.id);
+        // console.log(product.id);
         this.router.navigate(['/product', product.id]);
     };
     ;

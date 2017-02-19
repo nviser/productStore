@@ -11,10 +11,10 @@
         </thead>
         <tbody>
             <tr>
-                <td><img src="./../img/snickers.jpg" alt="img_for_prod_1"></td>
+                <td><img src="./../img/{{product.image}}" alt="img_for_prod"></td>
                 <td>{{product.name}}</td>
-                <td>Light, rapid and chip. Good choise</td>
-                <td>$100</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price | currency: UK}}</td>
             </tr>
         </tbody>
     </table>

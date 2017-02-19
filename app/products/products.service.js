@@ -10,20 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Product = (function () {
-    function Product(id, name) {
+    function Product(id, name, description, price, image) {
         this.id = id;
         this.name = name;
+        this.description = description;
+        this.price = price;
     }
     return Product;
 }());
 exports.Product = Product;
 var PRODUCTS = [
-    new Product(1, 'Snickers'),
-    new Product(2, 'Trousers'),
-    new Product(3, 'Jeans'),
-    new Product(4, 'Pyjama'),
-    new Product(5, 'Shirt'),
-    new Product(6, 'Trainers')
+    { name: "Snickers", id: 1, description: "Light and fast", price: 100, image: "snickers.jpg" },
+    { name: "Trousers", id: 2, description: "Cosy and comfortable", price: 25, image: "trousers.jpg" },
+    { name: "Jeans", id: 3, description: "Good fashion", price: 120, image: "jeans.jpg" },
+    { name: "Pyjama", id: 4, description: "Warm silk", price: 150, image: "pyjama.jpg" },
+    { name: "Shirt", id: 5, description: "White and long sleevs", price: 99, image: "shirt.jpg" },
+    { name: "Trainers", id: 6, description: "Rapid speed and control", price: 75, image: "trainers.jpg" }
 ];
 // import {PRODUCTS} from './mock-products';
 // import {Product} from './product';

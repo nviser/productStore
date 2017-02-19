@@ -213,9 +213,16 @@ th {
 }
 
 td {
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 
 img {
     width: 150px;
+}
+
+ul > li {
+    cursor: pointer;
+}
+li:hover {
+    background: #e2e2e2;
 }

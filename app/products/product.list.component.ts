@@ -35,7 +35,7 @@ export class ProductListComponent implements OnInit {
     isSelected(product: Product) { return product.id === this.selectedId; }
 
     moveTo(product: Product) {
-        console.log(product.id);
+        // console.log(product.id);
         this.router.navigate(['/product', product.id]);
     };
 }
