@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {ProductDetailsComponent} from './product.details.component';
-import {ProductDetailsComponent2} from './product.details.component2';
+import {ProductDetailsComponent} from './products/product.details.component';
+import {ProductDetailsComponent2} from './products/product.details.component2';
 import {PageNotFoundComponent} from './page.not.found.component';
-import {ProductListComponent} from './product.list.component';
+import {ProductListComponent} from './products/product.list.component';
 
 const appRouts: Routes = [
     {path: '1', component: ProductDetailsComponent},

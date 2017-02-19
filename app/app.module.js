@@ -12,10 +12,10 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_routing_module_1 = require('./app-routing.module');
 var app_component_1 = require('./app.component');
-var product_details_component_1 = require('./product.details.component');
-var product_details_component2_1 = require('./product.details.component2');
+var product_details_component_1 = require('./products/product.details.component');
+var product_details_component2_1 = require('./products/product.details.component2');
 var page_not_found_component_1 = require('./page.not.found.component');
-var product_list_component_1 = require('./product.list.component');
+var product_list_component_1 = require('./products/product.list.component');
 var AppModule = (function () {
     function AppModule() {
     }

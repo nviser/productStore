@@ -10,10 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var product_details_component_1 = require('./product.details.component');
-var product_details_component2_1 = require('./product.details.component2');
+var product_details_component_1 = require('./products/product.details.component');
+var product_details_component2_1 = require('./products/product.details.component2');
 var page_not_found_component_1 = require('./page.not.found.component');
-var product_list_component_1 = require('./product.list.component');
+var product_list_component_1 = require('./products/product.list.component');
 var appRouts = [
     { path: '1', component: product_details_component_1.ProductDetailsComponent },
     { path: '2', component: product_details_component2_1.ProductDetailsComponent2 },
